@@ -1,9 +1,13 @@
 #include <iostream>
 #include <cstdlib>
+#include <Windows.h>
 using namespace std;
 
 int main()
-{ int a=0, s,m,t,n,i,N=1000;
+{ 
+SetConsoleCP(1251);
+SetConsoleOutputCP(1251);
+int a=0, s,m,t,n,i,N=1000;
 int b=100;
 setlocale(LC_ALL, "Russian");
 
@@ -14,17 +18,17 @@ for(i=0; i<10;i++)
 
 if (m>s)
 {a=s;
-cout<<"N больше "<<s<<" (1 да, 2 нет, 3 равно)?"<<'\n';
+cout<<"N Р±РѕР»СЊС€Рµ "<<s<<" (1 РґР°, 2 РЅРµС‚, 3 СЂР°РІРЅРѕ)?"<<'\n';
 cin>>t;}
 
 if (m<s){
-cout<<"N больше "<<s<<" (1 да, 2 нет, 3 равно)?"<<'\n';
+cout<<"N Р±РѕР»СЊС€Рµ "<<s<<" (1 РґР°, 2 РЅРµС‚, 3 СЂР°РІРЅРѕ)?"<<'\n';
 b=s;
 cin>>t;
 }
 
 if (m==s)
-{cout<<"N больше "<<s<<" (1 да, 2 нет, 3 равно)?"<<'\n';
+{cout<<"N Р±РѕР»СЊС€Рµ "<<s<<" (1 РґР°, 2 РЅРµС‚, 3 СЂР°РІРЅРѕ)?"<<'\n';
 cin>>t;
 cout<<m<<'\n';
 break;
