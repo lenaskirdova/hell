@@ -1,5 +1,9 @@
-﻿#include <iostream>
+#include <iostream>
 #include <ctime>
+#include <cstdlib>
+#include <string>
+
+
 
 void swapTemp(int& a, int& b) {
     int temp = a;
@@ -29,15 +33,34 @@ void sort(int* arr, int size) {
     }
 }
 
-void getInt(const std::string& prompt, int& a)
+bool isNum(char c ) {
+if (c >=48 && c <=57) return true;
+return false;
+} 
+
+void getInt(int& a)
 {
     for (;;) {
-        std::cout << prompt;
-        if ((std::cin >> a).good() && (a <= 100) && (a >= 1)) return;
-        if (std::cin.fail()) {
-            std::cin.clear();
-        }
-        std::cin.ignore(100, '\n');
+        std::string syroy;
+		std::cin>>syroy;
+		
+		for(int i=0;i<syroy.size();i++)
+		{
+			if(!isNum(syroy[i])) 
+				break;
+			if(i==syroy.size()-1)
+			{ 
+				a=atoi(syroy.c_str());
+				
+				if(a<=100 && a>=1)
+				return;
+			}
+
+			
+		}
+
+
+       
     }
 }
 
@@ -57,7 +80,7 @@ int main()
     std::cout << a << " " << b << std::endl;
 
     int size;
-    getInt("enter size of the array: ", size);
+    getInt(size);
     int* arr = new int[size];
     for (int i = 0; i < size; i++) {
         arr[i] = rand() % 100 - 50;
@@ -77,5 +100,9 @@ int main()
     }
     std::cout << "]" << std::endl;  
     delete[] arr;
+
+	system ("pause");
     return 0;
+
+	
 }
