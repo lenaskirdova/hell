@@ -1,10 +1,11 @@
-﻿#include <iostream>
+#include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
 class CRational {
 private:
-    //поля
+  
     int num; //числитель
     int denom; //знаменатель
     int gcd(int a, int b) {
@@ -73,13 +74,15 @@ public:
 int main() {
     CRational a = CRational(1, 3);
     CRational b = CRational(1, 4);
-    //public методы можно вызывать отовсюду
-    //а если он static, то не нужно указывать вызывающий объект, в отличие от print()
+   
+   
     CRational c = CRational::add(a, b);
     c.print();
     a = CRational(2, 0);
     b = CRational(3, 4);
     c = CRational::mul(a, b);
     c.print();
+
+	system ("pause");
     return 0;
 }
