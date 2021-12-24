@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 using namespace std;
 
@@ -72,5 +73,6 @@ int main() {
 	cout << "long double machine max positive: " << machine_max_pos<long double>() << endl;
 	cout << "long double machine max negative: " << machine_max_neg<long double>() << endl << endl;
 
+	system ("pause");
 	return 0;
 }
